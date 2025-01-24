@@ -1,0 +1,49 @@
+<app-nav-bar></app-nav-bar>
+<div class="container" id="container">
+  <div class="form-container sign-in-container">
+    <div class="form">
+      <h1>Bem-vindo</h1>
+      <p>Entre na sua conta</p>
+
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu email"
+          [(ngModel)]="email"
+          required
+          #emailField="ngModel"
+          [class.invalid]="emailField.invalid && emailField.touched"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Senha"
+          [(ngModel)]="password"
+          required
+          #passwordField="ngModel"
+          [class.invalid]="passwordField.invalid && passwordField.touched"
+        />
+
+        <button
+          type="submit"
+          [disabled]="!loginForm.valid"
+          [ngClass]="{ 'loading': loading }"
+        >
+          {{ loading ? 'Aguarde...' : 'ENTRAR' }}
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-right">
+        <h1>Não possui conta?</h1>
+        <p>Clique no botão abaixo para acessar nossa aba de cadastro!</p>
+        <button class="ghost" id="signUp" routerLink="/cadastro">Cadastre-se</button>
+      </div>
+    </div>
+  </div>
+</div>
