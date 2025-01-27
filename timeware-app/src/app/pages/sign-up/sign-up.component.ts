@@ -6,15 +6,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-sign-up',
   standalone: false,
-
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
   name: string = '';
   email: string = '';
-  password: string = ''
-  confirmPassword: string = ''
+  password: string = '';
+  confirmPassword: string = '';
   loading: boolean = false;
 
   constructor(private userService: UserService, private router: Router){}
