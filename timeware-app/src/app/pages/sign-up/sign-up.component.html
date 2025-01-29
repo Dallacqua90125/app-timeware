@@ -8,14 +8,14 @@
 
       <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <input
-          type="email"
-          id="email"
-          name="email"
+          type="text"
+          id="name"
+          name="name"
           placeholder="Digite seu nome"
           [(ngModel)]="name"
           required
-          #emailField="ngModel"
-          [class.invalid]="emailField.invalid && emailField.touched"
+          #nameField="ngModel"
+          [class.invalid]="nameField.invalid && nameField.touched"
         />
         <input
           type="email"
@@ -44,8 +44,8 @@
           placeholder="Repita sua senha"
           [(ngModel)]="confirmPassword"
           required
-          #passwordField="ngModel"
-          [class.invalid]="passwordField.invalid && passwordField.touched"
+          #passwordConfirmField="ngModel"
+          [class.invalid]="passwordConfirmField.invalid && passwordConfirmField.touched"
         />
 
         <button

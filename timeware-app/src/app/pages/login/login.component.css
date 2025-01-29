@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .body {
@@ -9,16 +10,13 @@
 	height: 92vh;
 	margin: -20px 0 50px;
 }
-
 h1 {
 	font-weight: bold;
 	margin: 0;
 }
-
 h2 {
 	text-align: center;
 }
-
 p {
 	font-size: 14px;
 	font-weight: 100;
@@ -26,24 +24,20 @@ p {
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
 }
-
 button.loading {
 	background-color: #ccc; /* Cor de fundo cinza */
 	color: #666; /* Cor do texto cinza */
 	cursor: not-allowed; /* Mostra o cursor de bloqueado */
-}
-
+  }
 span {
 	font-size: 12px;
 }
-
 a {
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
 	margin: 15px 0;
 }
-
 button {
 	border-radius: 20px;
 	border: 1px solid #1493fb;
@@ -55,35 +49,30 @@ button {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
+  cursor: pointer;
 }
-
 button[disabled] {
   background-color: #ccc;
   cursor: not-allowed;
 }
-
 button:active {
 	transform: scale(0.95);
 }
-
 button:focus {
 	outline: none;
 }
-
 button.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
   color: rgb(46, 45, 45);
 }
-
-button.ghost:hover {
+button.ghost:hover{
   background-color: #FFFFFF;
+  cursor: pointer;
 }
-
 .buttom-submit:hover {
-  background-color: #51a8ef;
+  background-color:#51a8ef ;
 }
-
 .form {
 	background-color: #FFFFFF;
 	display: flex;
@@ -94,7 +83,6 @@ button.ghost:hover {
 	height: 100%;
 	text-align: center;
 }
-
 input {
 	background-color: #eee;
 	border: none;
@@ -102,7 +90,6 @@ input {
 	margin: 8px 0;
 	width: 100%;
 }
-
 .container {
 	background-color: #fff;
 	border-radius: 20px;
@@ -114,22 +101,17 @@ input {
 	max-width: 100%;
 	min-height: 450px;
 }
-
 .form-container {
 	position: absolute;
 	top: 0;
 	height: 100%;
 	transition: all 0.6s ease-in-out;
-	opacity: 1;
-	visibility: visible;
 }
-
 .sign-in-container {
 	left: 0;
 	width: 50%;
 	z-index: 2;
 }
-
 .overlay-container {
 	position: absolute;
 	top: 0;
@@ -140,7 +122,6 @@ input {
 	transition: transform 0.6s ease-in-out;
 	z-index: 100;
 }
-
 .overlay {
 	background:#1493fb;
 	background: linear-gradient(to right, #1493fb, #1493fb);
@@ -155,7 +136,6 @@ input {
   transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
-
 .overlay-panel {
 	position: absolute;
 	display: flex;
@@ -167,7 +147,6 @@ input {
 	height: 100%;
 	width: 50%;
 }
-
 .overlay-right {
 	right: 0;
 }
