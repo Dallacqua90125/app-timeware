@@ -1,27 +1,27 @@
 <app-nav-bar></app-nav-bar>
 <div class="body">
 <div class="container" id="container">
-  <div class="form-container sign-up-container">
+  <div class="form-container sign-in-container">
     <div class="form">
       <h1>Cadastro</h1>
       <p>Crie sua conta</p>
 
-      <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
         <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Seu nome completo"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Digite seu nome"
           [(ngModel)]="name"
           required
-          #nameField="ngModel"
-          [class.invalid]="nameField.invalid && nameField.touched"
+          #emailField="ngModel"
+          [class.invalid]="emailField.invalid && emailField.touched"
         />
         <input
           type="email"
           id="email"
           name="email"
-          placeholder="Seu email"
+          placeholder="Digite seu email"
           [(ngModel)]="email"
           required
           #emailField="ngModel"
@@ -31,7 +31,7 @@
           type="password"
           id="password"
           name="password"
-          placeholder="Crie uma senha segura"
+          placeholder="Senha"
           [(ngModel)]="password"
           required
           #passwordField="ngModel"
@@ -39,21 +39,21 @@
         />
         <input
           type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          placeholder="Confirme sua senha"
+          id="password"
+          name="password"
+          placeholder="Repita sua senha"
           [(ngModel)]="confirmPassword"
           required
-          #confirmPasswordField="ngModel"
-          [class.invalid]="confirmPasswordField.invalid && confirmPasswordField.touched"
+          #passwordField="ngModel"
+          [class.invalid]="passwordField.invalid && passwordField.touched"
         />
 
         <button
           type="submit"
-          [disabled]="!registerForm.valid"
+          [disabled]="!loginForm.valid"
           [ngClass]="{ 'loading': loading }"
         >
-          {{ loading ? 'Aguarde...' : 'CADASTRAR' }}
+          {{ loading ? 'Aguarde...' : 'CRIAR' }}
         </button>
       </form>
     </div>
@@ -61,9 +61,9 @@
   <div class="overlay-container">
     <div class="overlay">
       <div class="overlay-panel overlay-right">
-        <h1>Já tem uma conta?</h1>
-        <p>Clique no botão abaixo para acessar nossa aba de login!</p>
-        <button class="ghost" id="signIn" routerLink="/login">Entrar</button>
+        <h1>Já possui conta?</h1>
+        <p>Clique no botão abaixo para acessar a aba de login!</p>
+        <button class="ghost" id="signUp" routerLink="/login">Entrar</button>
       </div>
     </div>
   </div>

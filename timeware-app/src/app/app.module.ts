@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
+import { ContentComponent } from './pages/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignUpComponent,
-    NavBarComponent
+    NavBarComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

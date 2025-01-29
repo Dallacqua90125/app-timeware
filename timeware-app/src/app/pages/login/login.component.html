@@ -6,7 +6,7 @@
       <h1>Bem-vindo</h1>
       <p>Entre na sua conta</p>
 
-      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm" >
         <input
           type="email"
           id="email"
@@ -32,6 +32,7 @@
           type="submit"
           [disabled]="!loginForm.valid"
           [ngClass]="{ 'loading': loading }"
+          class="buttom-submit"
         >
           {{ loading ? 'Aguarde...' : 'ENTRAR' }}
         </button>

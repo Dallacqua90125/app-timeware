@@ -1,7 +1,8 @@
-import { UserService } from './../../services/user.service';
+import { UserService } from '../../services/users/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../../models/Users';
 import * as CryptoJS from 'crypto-js'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,12 @@ import * as CryptoJS from 'crypto-js'
 export class LoginComponent implements OnInit{
 
   loading: boolean = false;
-
   users: Users[] = [];
   usersGeral: Users[] = [];
-
   email: string = '';
   password: string = '';
 
-  constructor( private userService: UserService ){}
+  constructor( private userService: UserService, private router: Router ){}
 
   ngOnInit(): void {
       this.userService.GetUsers().subscribe(response => {
@@ -32,7 +31,6 @@ export class LoginComponent implements OnInit{
       })
   }
 
-
   onSubmit(){
 
     this.loading = true;
@@ -40,10 +38,10 @@ export class LoginComponent implements OnInit{
     let funf: boolean = false
     this.users.forEach(user => {
       if (this.email == user.email && hashedPassword == user.password) {
-        alert("Seja bem vindo");
+        alert(`Seja bem vindo ${user.name}`);
         funf = true
         this.loading = false;
-
+        this.router.navigate(['/content']);
       }
     })
     if (funf == false) {
